@@ -2,8 +2,6 @@
 
 Bu repository, **Veri Analizi Okulu** kapsamında gerçekleştirilen temel ve ileri seviye Makine Öğrenmesi (ML) uygulamalarını, veri ön işleme adımlarını ve algoritmik karşılaştırmaları içermektedir. 
 
-Projelerde sadece teorik algoritmalar uygulanmamış; aynı zamanda veri sızıntısı (**data leakage**) ve model-veri tipi uyumsuzluğu gibi pratik mühendislik problemleri tespit edilerek refactor edilmiştir.
-
 ---
 
 ## 🛠 Proje İçeriği ve Notebook'lar
