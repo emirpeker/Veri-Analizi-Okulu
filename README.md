@@ -1,3 +1,4 @@
+
 # Veri Analizi ve Makine Öğrenmesi Çalışmaları
 
 Bu repository, **Veri Analizi Okulu** kapsamında gerçekleştirilen veri analizi ve makine öğrenmesi uygulamalarını içermektedir.
@@ -12,10 +13,7 @@ Bu repository, **Veri Analizi Okulu** kapsamında gerçekleştirilen veri analiz
 
 | Notebook / Konu | Tür | Kullanılan Algoritmalar / Teknikler | Açıklama |
 | :--- | :--- | :--- | :--- |
-
 | [Naive Bayes & Random Forest](./Veri_Analiz_Okulu%2C_Yapay_Zeka__Makina_%C3%96%C4%9Frenmesi%2C_Ders_8_Uygulama.ipynb) | Sınıflandırma | `MultinomialNB`, `RandomForestClassifier`, `RandomOverSampler` | Akciğer kanseri anket verileri üzerinde sınıflandırma ve sınıf dengesizliği çalışması. |
-
-| Akciğer kanseri anket verileri üzerinde sınıflandırma ve sınıf dengesizliği çalışması. |
 | [SVM (Support Vector Machines)](./Veri_Analiz_Okulu%2C_Yapay_Zeka__Makina_%C3%96%C4%9Frenmesi%2C_Ders_6_Uygulama__SVM.ipynb) | Sınıflandırma | `SVC`, Linear ve RBF Kernel | Meme kanseri veri seti üzerinde SVM modellerinin eğitilmesi ve karşılaştırılması. |
 | [PCA (Principal Component Analysis)](./Veri_Analiz_Okulu%2C_Yapay_Zeka__Makina_%C3%96%C4%9Frenmesi%2C_Ders_6_Uygulama__PCA.ipynb) | Boyut İndirgeme | `PCA`, `StandardScaler` | Iris veri setinde açıklanan varyansın incelenmesi ve boyut indirgeme. |
 | [LDA (Linear Discriminant Analysis)](./Veri_Analiz_Okulu%2C_Yapay_Zeka__Makina_%C3%96%C4%9Frenmesi%2C_Ders_6_Uygulama__LDA.ipynb) | Sınıflandırma / Boyut İndirgeme | `LinearDiscriminantAnalysis` | Palmer Penguins veri seti üzerinde sınıf ayrıştırma ve görselleştirme. |
@@ -41,7 +39,6 @@ Bu repository, **Veri Analizi Okulu** kapsamında gerçekleştirilen veri analiz
 
 Bu çalışmalar eğitim amaçlı notebook'lardan oluşmaktadır. İnceleme sırasında bazı teknik iyileştirme alanları belirlenmiştir.
 
-
 ### 1. Data Leakage (Veri Sızıntısı)
 
 Akciğer kanseri sınıflandırma çalışmasında, başlangıçta yeniden örnekleme işlemi eğitim/test ayrımından önce gerçekleştiriliyordu. Bu durum veri sızıntısı riski oluşturuyordu.
@@ -65,7 +62,6 @@ Akciğer kanseri sınıflandırma çalışmasında, başlangıçta yeniden örne
 
 Bu sonuçlar tek bir eğitim/test ayrımına dayanmaktadır. Özellikle küçük ve dengesiz test kümesi nedeniyle genellenebilir performansın belirlenmesi için ek değerlendirmeler gereklidir.
 
-
 ### 2. Naive Bayes Model Seçimi
 
 Akciğer kanseri notebook'unda `MultinomialNB` kullanılmaktadır.
@@ -77,7 +73,6 @@ Bu algoritma, negatif olmayan özelliklerle çalışır ve özellikle sayım/fre
 Sınıflandırma çalışmalarında doğruluk (accuracy), karmaşıklık matrisi (confusion matrix), precision, recall ve F1-score gibi ölçütler incelenmektedir.
 
 Özellikle dengesiz veri setlerinde tek başına accuracy değerine güvenmek yeterli değildir.
-
 
 ---
 
@@ -97,9 +92,7 @@ Kullanılan başlıca Python paketleri:
 
 Gerekli paketler ve veri kaynakları notebook'a göre değişebilir.
 
-
 **Veri seti:** Akciğer kanseri sınıflandırma notebook'u CSV verisini Hugging Face üzerindeki `nateraw/lung-cancer` veri kaynağından yüklemektedir. Çalıştırma sırasında internet bağlantısı gereklidir.
-
 
 ---
 
