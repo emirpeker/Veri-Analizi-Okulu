@@ -1,43 +1,95 @@
 # Veri Analizi ve Makine Öğrenmesi Çalışmaları
 
-Bu repository, **Veri Analizi Okulu** kapsamında gerçekleştirilen temel ve ileri seviye Makine Öğrenmesi (ML) uygulamalarını, veri ön işleme adımlarını ve algoritmik karşılaştırmaları içermektedir. 
+Bu repository, **Veri Analizi Okulu** kapsamında gerçekleştirilen veri analizi ve makine öğrenmesi uygulamalarını içermektedir.
+
+Çalışmalarda sınıflandırma, kümeleme, boyut indirgeme, veri ön işleme ve model değerlendirme yöntemleri Jupyter Notebook ortamında uygulanmıştır.
+
+**Kullanılan teknolojiler:** Python, Pandas, NumPy, Matplotlib, Seaborn, Scikit-learn, TensorFlow/Keras ve Imbalanced-learn.
 
 ---
 
-## 🛠 Proje İçeriği ve Notebook'lar
+## Proje İçeriği ve Notebook'lar
 
 | Notebook / Konu | Tür | Kullanılan Algoritmalar / Teknikler | Açıklama |
 | :--- | :--- | :--- | :--- |
-| **Naive Bayes & Random Forest** | Sınıflandırma | `GaussianNB`, `RandomForestClassifier`, `ADASYN` | Akciğer kanseri tahmini. Veri dengesizliği giderildi ve model performansları kıyaslandı. |
-| **SVMs (Support Vector Machines)** | Sınıflandırma | `SVC` (Linear, RBF Kernel) | Karmaşık karar sınırlarının analizi ve hiperparametre optimizasyonu. |
-| **PCA (Principal Component Analysis)** | Boyut İndirgeme | `PCA` | Yüksek boyutlu veride varyansı koruyarak öznitelik alanını küçültme (Unsupervised). |
-| **LDA (Linear Discriminant Analysis)** | Boyut İndirgeme | `LDA` | Sınıf ayrıştırılabilirliğini (class separability) maksimuma çıkaran boyut indirgeme (Supervised). |
-| **Çok Sınıflı Sınıflandırma - YSA** | Derin Öğrenme / ML | `Yapay Sinir Ağları (ANN)`, `Softmax` | Çok sınıflı hedef değişkenlerin Yapay Sinir Ağları ile modellenmesi. |
-| **K-Ortalamalar (K-Means)** | Kümeleme | `KMeans`, `Elbow Method` | Etiketsiz veride küme merkezlerinin tespiti ve segmented veri analizi. |
+| [Naive Bayes & Random Forest](./Veri_Analiz_Okulu%2C_Yapay_Zeka__Makina_%C3%96%C4%9Frenmesi%2C_Ders_8_Uygulama.ipynb) | Sınıflandırma | `MultinomialNB`, `RandomForestClassifier`, `ADASYN` | Akciğer kanseri anket verileri üzerinde sınıflandırma ve sınıf dengesizliği çalışması. |
+| [SVM (Support Vector Machines)](./Veri_Analiz_Okulu%2C_Yapay_Zeka__Makina_%C3%96%C4%9Frenmesi%2C_Ders_6_Uygulama__SVM.ipynb) | Sınıflandırma | `SVC`, Linear ve RBF Kernel | Meme kanseri veri seti üzerinde SVM modellerinin eğitilmesi ve karşılaştırılması. |
+| [PCA (Principal Component Analysis)](./Veri_Analiz_Okulu%2C_Yapay_Zeka__Makina_%C3%96%C4%9Frenmesi%2C_Ders_6_Uygulama__PCA.ipynb) | Boyut İndirgeme | `PCA`, `StandardScaler` | Iris veri setinde açıklanan varyansın incelenmesi ve boyut indirgeme. |
+| [LDA (Linear Discriminant Analysis)](./Veri_Analiz_Okulu%2C_Yapay_Zeka__Makina_%C3%96%C4%9Frenmesi%2C_Ders_6_Uygulama__LDA.ipynb) | Sınıflandırma / Boyut İndirgeme | `LinearDiscriminantAnalysis` | Palmer Penguins veri seti üzerinde sınıf ayrıştırma ve görselleştirme. |
+| [Çok Sınıflı Sınıflandırma – YSA](./Veri_Analiz_Okulu%2C_Yapay_Zeka__Makina_%C3%96%C4%9Frenmesi%2C_Ders_5_Uygulama_Script_1.ipynb) | Makine Öğrenmesi / Derin Öğrenme | Yapay Sinir Ağları (ANN), Softmax | Penguen türlerinin çok sınıflı bir sinir ağı modeliyle sınıflandırılması. |
+| [K-Ortalamalar (K-Means)](./Veri%20Analiz%20Okulu%2C%20Yapay%20Zeka_%20Makina%20%C3%96%C4%9Frenmesi%2C%20Ders%205%20Uygulama%20Script%202.ipynb) | Kümeleme | `KMeans`, Elbow Method, Silhouette Score | Sentetik veri kümelerinde kümeleme, uygun küme sayısı ve ölçeklendirme etkilerinin incelenmesi. |
 
 ---
 
-## 🔍 Algoritma Karşılaştırma Matrisi
+## Algoritma Karşılaştırma Matrisi
 
-| Algoritma | Öğrenme Türü | Temel Kullanım Senaryosu | Kritik Avantajı | Dikkat Edilmesi Gereken Risk / Sınır |
+| Algoritma | Öğrenme Türü | Temel Kullanım Senaryosu | Avantajı | Dikkat Edilmesi Gereken Nokta |
 | :--- | :--- | :--- | :--- | :--- |
-| **PCA** | Unsupervised | Boyut İndirgeme | Varyansı maksimum tutarak veri boyutunu düşürür. | Dönüştürülen bileşenlerin (components) iş alanındaki anlamlandırılabilirliği kaybolur. |
-| **LDA** | Supervised | Boyut İndirgeme & Sınıflandırma | Sınıf etiketlerini kullanarak sınıflar arası mesafeyi max yapar. | Hedef etiketlere (`y`) bağımlıdır, veri etiketsizse kullanılamaz. |
-| **SVM** | Supervised | Karmaşık Sınıflandırma | Kernel trick ile doğrusal olmayan verilerde yüksek başarım gösterir. | Büyük ölçekli veri setlerinde bellek ve hesaplama maliyeti yüksektir. |
-| **K-Means** | Unsupervised | Müşteri/Veri Segmentasyonu | Hızlıdır, büyük veride ölçeklenmesi kolaydır. | Başlangıç merkezlerine ($k$) hassastır, küremsi olmayan kümelerde zayıftır. |
-| **Naive Bayes** | Supervised | Metin / Hızlı Sınıflandırma | Düşük veri miktarıyla hızlı eğitilir, olasılıksal bazlıdır. | Özniteliklerin birbirinden bağımsız olduğu varsayımına (`Naive`) dayanır. |
+| **PCA** | Gözetimsiz (Unsupervised) | Boyut İndirgeme | Verideki varyansı koruyan bileşenler oluşturur. | Bileşenlerin yorumlanması zorlaşabilir. |
+| **LDA** | Gözetimli (Supervised) | Sınıflandırma ve Boyut İndirgeme | Sınıflar arasındaki ayrımı artırmayı hedefler. | Sınıf etiketlerine ihtiyaç duyar. |
+| **SVM** | Gözetimli | Sınıflandırma | Kernel fonksiyonlarıyla doğrusal olmayan ilişkileri modelleyebilir. | Ölçeklendirmeye ve hiperparametre seçimine duyarlıdır. |
+| **K-Means** | Gözetimsiz | Kümeleme | Basit ve birçok veri kümesinde verimli bir yöntemdir. | Küme sayısına, ölçeklendirmeye ve küme geometrisine duyarlıdır. |
+| **Naive Bayes** | Gözetimli | Sınıflandırma | Hesaplama açısından verimli olasılıksal bir yöntemdir. | Özellikler arasında koşullu bağımsızlık varsayımı yapar. |
+| **Random Forest** | Gözetimli | Sınıflandırma | Birden fazla karar ağacının sonuçlarını birleştirir. | Model karmaşıklığı ve yorumlanabilirlik dikkate alınmalıdır. |
 
 ---
 
-## 📌 Metodolojik Notlar ve Refactoring (Öğrenilen Dersler)
+## Metodolojik Notlar ve Geliştirme Alanları
 
-Proje süreçlerinde açık kaynak kodlar ve literatür incelenirken yapılan teknik tespitler:
+Bu çalışmalar eğitim amaçlı notebook'lardan oluşmaktadır. İnceleme sırasında bazı teknik iyileştirme alanları belirlenmiştir.
 
-1. **Data Leakage (Veri Sızıntısı) Düzeltmesi:** 
-   * Sentetik veri üretme yöntemleri (`ADASYN` / `SMOTE`), `train_test_split` işleminden **önce** uygulandığında test seti bilgisi eğitim setine sızmaktadır.
-   * **Çözüm:** Veri seti önce $X_{train}$ ve $X_{test}$ olarak ayrılmış, oversampling işlemi **yalnızca $X_{train}$** üzerinde uygulanarak test seti tamamen izole edilmiştir.
+### 1. Data Leakage (Veri Sızıntısı)
 
-2. **Model ve Öznitelik Uyumsuzluğu:**
-   * Sürekli (continuous) ve ondalıklı değer içeren klinik/medikal verilerde kesikli frekanslar için tasarlanmış `MultinomialNB` yerine sürekli dağılımlara uygun olan `GaussianNB` tercih edilmiştir.
+Akciğer kanseri sınıflandırma notebook'unda `ADASYN` ile yeniden örnekleme işlemi, mevcut kodda `train_test_split` işleminden önce gerçekleştirilmektedir.
+
+Bu yaklaşım, sentetik örneklerin oluşturulması sırasında test verilerinden dolaylı olarak yararlanılmasına yol açabilir ve model performansını olduğundan yüksek gösterebilir.
+
+**Planlanan düzeltme:**
+
+- Veri setini önce eğitim ve test kümelerine ayırmak.
+- `ADASYN` işlemini yalnızca eğitim verisine uygulamak.
+- Modelleri yeniden eğitip değiştirilmemiş test kümesi üzerinde değerlendirmek.
+
+Bu düzeltme henüz ilgili notebook'a uygulanmamıştır.
+
+### 2. Naive Bayes Model Seçimi
+
+Akciğer kanseri notebook'unda `MultinomialNB` kullanılmaktadır.
+
+Bu algoritma, negatif olmayan özelliklerle çalışır ve özellikle sayım/frekans türündeki veriler için geliştirilmiştir. Veri setinin özellik dağılımlarına göre `GaussianNB` gibi alternatiflerin karşılaştırılması değerlendirilmesi gereken bir geliştirme alanıdır.
+
+### 3. Model Değerlendirme
+
+Sınıflandırma çalışmalarında doğruluk (accuracy), karmaşıklık matrisi (confusion matrix), precision, recall ve F1-score gibi ölçütler incelenmektedir.
+
+Özellikle dengesiz veri setlerinde tek başına accuracy değerine güvenmek yeterli değildir.
+
+**Not:** Akciğer kanseri notebook'undaki mevcut performans sonuçları, veri sızıntısı riski giderilip modeller yeniden değerlendirilmeden güvenilir nihai sonuçlar olarak yorumlanmamalıdır.
 
 ---
+
+## Çalıştırma
+
+Notebook'lar Google Colab veya uygun Python ortamına sahip Jupyter Notebook üzerinde incelenebilir.
+
+Kullanılan başlıca Python paketleri:
+
+- `numpy`
+- `pandas`
+- `matplotlib`
+- `seaborn`
+- `scikit-learn`
+- `tensorflow`
+- `imbalanced-learn`
+
+Gerekli paketler ve veri kaynakları notebook'a göre değişebilir.
+
+**Veri seti notu:** Akciğer kanseri notebook'u `/content/survey_lung_cancer.csv` konumunda bir CSV dosyası beklemektedir. Bu veri seti repository içerisinde bulunmadığından çalıştırılmadan önce ayrıca sağlanmalıdır.
+
+---
+
+## Proje Kapsamı
+
+Bu repository, makine öğrenmesi algoritmalarını öğrenmek, uygulamak ve sonuçlarını karşılaştırmak amacıyla hazırlanmış **eğitim çalışmalarından** oluşmaktadır.
+
+Notebook'larda kullanılan örnekler ve veri kaynakları ilgili çalışmaların bağlamında değerlendirilmelidir. Bunlar üretim ortamında kullanılan veya klinik karar verme amacı taşıyan sistemler değildir.
