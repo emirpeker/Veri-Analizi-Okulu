@@ -12,7 +12,9 @@ Bu repository, **Veri Analizi Okulu** kapsamında gerçekleştirilen veri analiz
 
 | Notebook / Konu | Tür | Kullanılan Algoritmalar / Teknikler | Açıklama |
 | :--- | :--- | :--- | :--- |
-| [Naive Bayes & Random Forest](./Veri_Analiz_Okulu%2C_Yapay_Zeka__Makina_%C3%96%C4%9Frenmesi%2C_Ders_8_Uygulama.ipynb) | Sınıflandırma | `MultinomialNB`, `RandomForestClassifier`, `ADASYN` | Akciğer kanseri anket verileri üzerinde sınıflandırma ve sınıf dengesizliği çalışması. |
+| [Naive Bayes & Random Forest](./Veri_Analiz_Okulu%2C_Yapay_Zeka__Makina_%C3%96%C4%9Frenmesi%2C_Ders_8_Uygulama.ipynb) | Sınıflandırma | 
+`MultinomialNB`, `RandomForestClassifier`, `RandomOverSampler`
+ | Akciğer kanseri anket verileri üzerinde sınıflandırma ve sınıf dengesizliği çalışması. |
 | [SVM (Support Vector Machines)](./Veri_Analiz_Okulu%2C_Yapay_Zeka__Makina_%C3%96%C4%9Frenmesi%2C_Ders_6_Uygulama__SVM.ipynb) | Sınıflandırma | `SVC`, Linear ve RBF Kernel | Meme kanseri veri seti üzerinde SVM modellerinin eğitilmesi ve karşılaştırılması. |
 | [PCA (Principal Component Analysis)](./Veri_Analiz_Okulu%2C_Yapay_Zeka__Makina_%C3%96%C4%9Frenmesi%2C_Ders_6_Uygulama__PCA.ipynb) | Boyut İndirgeme | `PCA`, `StandardScaler` | Iris veri setinde açıklanan varyansın incelenmesi ve boyut indirgeme. |
 | [LDA (Linear Discriminant Analysis)](./Veri_Analiz_Okulu%2C_Yapay_Zeka__Makina_%C3%96%C4%9Frenmesi%2C_Ders_6_Uygulama__LDA.ipynb) | Sınıflandırma / Boyut İndirgeme | `LinearDiscriminantAnalysis` | Palmer Penguins veri seti üzerinde sınıf ayrıştırma ve görselleştirme. |
