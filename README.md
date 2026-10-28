@@ -38,19 +38,30 @@ Bu repository, **Veri Analizi Okulu** kapsamında gerçekleştirilen veri analiz
 
 Bu çalışmalar eğitim amaçlı notebook'lardan oluşmaktadır. İnceleme sırasında bazı teknik iyileştirme alanları belirlenmiştir.
 
+
 ### 1. Data Leakage (Veri Sızıntısı)
 
-Akciğer kanseri sınıflandırma notebook'unda `ADASYN` ile yeniden örnekleme işlemi, mevcut kodda `train_test_split` işleminden önce gerçekleştirilmektedir.
+Akciğer kanseri sınıflandırma çalışmasında, başlangıçta yeniden örnekleme işlemi eğitim/test ayrımından önce gerçekleştiriliyordu. Bu durum veri sızıntısı riski oluşturuyordu.
 
-Bu yaklaşım, sentetik örneklerin oluşturulması sırasında test verilerinden dolaylı olarak yararlanılmasına yol açabilir ve model performansını olduğundan yüksek gösterebilir.
+**Yapılan düzeltmeler:**
 
-**Planlanan düzeltme:**
+- Veri seti önce eğitim ve test kümelerine ayrıldı.
+- Sınıf oranlarını korumak için `stratify=y` kullanıldı.
+- Kategorik özelliklere daha uygun olması nedeniyle `ADASYN` yerine `RandomOverSampler` tercih edildi.
+- Yeniden örnekleme yalnızca eğitim kümesine uygulandı.
+- Modeller değiştirilmemiş test kümesi üzerinde yeniden değerlendirildi.
 
-- Veri setini önce eğitim ve test kümelerine ayırmak.
-- `ADASYN` işlemini yalnızca eğitim verisine uygulamak.
-- Modelleri yeniden eğitip değiştirilmemiş test kümesi üzerinde değerlendirmek.
+**Güncel sonuçlar (69 test örneği):**
 
-Bu düzeltme henüz ilgili notebook'a uygulanmamıştır.
+| Metrik | Naive Bayes | Random Forest |
+| --- | ---: | ---: |
+| Accuracy | 86% | 88% |
+| Class 0 Recall | 80% | 40% |
+| Class 1 Recall | 86% | 97% |
+| Macro F1-score | 0.76 | 0.72 |
+
+Bu sonuçlar tek bir eğitim/test ayrımına dayanmaktadır. Özellikle küçük ve dengesiz test kümesi nedeniyle genellenebilir performansın belirlenmesi için ek değerlendirmeler gereklidir.
+
 
 ### 2. Naive Bayes Model Seçimi
 
@@ -64,7 +75,6 @@ Sınıflandırma çalışmalarında doğruluk (accuracy), karmaşıklık matrisi
 
 Özellikle dengesiz veri setlerinde tek başına accuracy değerine güvenmek yeterli değildir.
 
-**Not:** Akciğer kanseri notebook'undaki mevcut performans sonuçları, veri sızıntısı riski giderilip modeller yeniden değerlendirilmeden güvenilir nihai sonuçlar olarak yorumlanmamalıdır.
 
 ---
 
@@ -84,7 +94,9 @@ Kullanılan başlıca Python paketleri:
 
 Gerekli paketler ve veri kaynakları notebook'a göre değişebilir.
 
-**Veri seti notu:** Akciğer kanseri notebook'u `/content/survey_lung_cancer.csv` konumunda bir CSV dosyası beklemektedir. Bu veri seti repository içerisinde bulunmadığından çalıştırılmadan önce ayrıca sağlanmalıdır.
+
+**Veri seti:** Akciğer kanseri sınıflandırma notebook'u CSV verisini Hugging Face üzerindeki `nateraw/lung-cancer` veri kaynağından yüklemektedir. Çalıştırma sırasında internet bağlantısı gereklidir.
+
 
 ---
 
